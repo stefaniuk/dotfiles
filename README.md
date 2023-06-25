@@ -1,6 +1,6 @@
-# Make Ops Tools - Dotfiles
+# Stefaniuk - Dotfiles
 
-[![CI/CD Pipeline](https://github.com/make-ops-tools/dotfiles/actions/workflows/cicd-pipeline.yaml/badge.svg)](https://github.com/make-ops-tools/dotfiles/actions/workflows/cicd-pipeline.yaml)
+[![CI/CD Pipeline](https://github.com/stefaniuk/dotfiles/actions/workflows/cicd-pipeline.yaml/badge.svg)](https://github.com/stefaniuk/dotfiles/actions/workflows/cicd-pipeline.yaml)
 
 Dotfiles are configuration files on `*NIX` systems and are used to customise the behaviour and appearance of common applications, command-line tools and shell. They can contain various predefined settings, functions, aliases, environment variables and other configurations that affect how programs behave and interact with the system.
 
@@ -10,7 +10,7 @@ Here is _[Your unofficial guide to dotfiles on GitHub](https://dotfiles.github.i
 
 ## Table of Contents
 
-- [Make Ops Tools - Dotfiles](#make-ops-tools---dotfiles)
+- [Stefaniuk - Dotfiles](#stefaniuk---dotfiles)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
     - [Archive your current dotfiles configuration](#archive-your-current-dotfiles-configuration)
@@ -43,10 +43,10 @@ chezmoi archive --output=/tmp/dotfiles.tar.gz
 
 ### Apply new configuration via `chezmoi`
 
-The following instruction clones [\$GITHUB_ORG/dotfiles](https://github.com/make-ops-tools/dotfiles) repository into the `~/.local/share/chezmoi/` directory and next applies changes accordingly, to your home directory `~/`. During the setup it prompts you to provide configuration options like Git committer name and email address, etc.
+The following instruction clones [\$GITHUB_ORG/dotfiles](https://github.com/stefaniuk/dotfiles) repository into the `~/.local/share/chezmoi/` directory and next applies changes accordingly, to your home directory `~/`. During the setup it prompts you to provide configuration options like Git committer name and email address, etc.
 
 ```shell
-chezmoi init --apply $GITHUB_ORG # "make-ops-tools"
+chezmoi init --apply "stefaniuk"
 ```
 
 ### Use the installation script from this repository
@@ -54,13 +54,13 @@ chezmoi init --apply $GITHUB_ORG # "make-ops-tools"
 You can use the convenience script to install the dotfiles on any machine with a single command. Simply run the following in your terminal
 
 ```shell
-bash -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_ORG # "make-ops-tools"
+bash -c "$(curl -fsLS get.chezmoi.io)" -- init --apply "stefaniuk"
 ```
 
 or clone the repository ...
 
 ```shell
-git clone https://github.com/make-ops-tools/dotfiles.git ~/.local/share/chezmoi
+git clone https://github.com/stefaniuk/dotfiles.git ~/.local/share/chezmoi
 ```
 
 Installation flow diagram
