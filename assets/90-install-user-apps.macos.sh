@@ -27,7 +27,6 @@ function install {
 
   # Install user apps
   brew $install --cask \
-    commander-one \
     enpass \
     google-drive \
     istat-menus \
