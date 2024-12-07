@@ -31,7 +31,6 @@ function install {
     appcleaner \
     commander-one \
     dcommander \
-    dozer \
     enpass \
     google-drive \
     istat-menus \
@@ -44,6 +43,8 @@ function install {
     vlc \
     wifi-explorer \
     ||:
+
+  # TODO: Add `dozer` to the list above once this issue is fixed https://github.com/Mortennn/Dozer/issues/198
 }
 
 # ==============================================================================
