@@ -27,16 +27,11 @@ function install {
 
   # Install user apps
   brew $install --cask \
-    alt-tab \
-    appcleaner \
     commander-one \
-    dcommander \
-    dozer \
     enpass \
     google-drive \
     istat-menus \
     keepingyouawake \
-    nordvpn \
     raindropio \
     rectangle \
     snagit \
@@ -44,6 +39,9 @@ function install {
     vlc \
     wifi-explorer \
     ||:
+
+  # TODO: Add `dozer` to the list above once this issue is fixed https://github.com/Mortennn/Dozer/issues/198
+  # INFO: Removed `alt-tab, appcleaner, commander-one, dcommander, nordvpn`
 }
 
 # ==============================================================================
