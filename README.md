@@ -13,13 +13,13 @@ Here is an _[Unofficial guide to dotfiles on GitHub](https://dotfiles.github.io/
 - [Stefaniuk - Dotfiles](#stefaniuk---dotfiles)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
-    - [Archive your home directory](#archive-your-home-directory)
     - [Apply new configuration](#apply-new-configuration)
     - [Set up a password manager](#set-up-a-password-manager)
   - [Structure](#structure)
   - [Features](#features)
   - [Usage](#usage)
     - [Store changes in your own repository](#store-changes-in-your-own-repository)
+    - [Archive your home directory](#archive-your-home-directory)
   - [Resources](#resources)
   - [Contacts](#contacts)
   - [Licence](#licence)
@@ -28,26 +28,12 @@ Here is an _[Unofficial guide to dotfiles on GitHub](https://dotfiles.github.io/
 
 This dotfiles repository is configured and managed by the `chezmoi` project. [chezmoi](https://www.chezmoi.io/), pronounced _/ʃeɪ mwa/ (shay-moi)_ is currently the [most complete and most hackable](https://www.chezmoi.io/comparison-table/) dotfiles manager out there.
 
-### Archive your home directory
-
-Prior to applying any changes to your home directory, create a backup of your current configuration. This command creates an archive file in the temporary directory that can be used later to restore the configuration, if needed.
-
-```shell
-tar -czvf /tmp/home-directory-backup.tar.gz -C ~ .
-```
-
-You might be prompted by your terminal application to grant access permissions, allowing the process to access files in your home directory. However, if the above takes too long as it archives all the files in your home directory an alternative would be to use `chezmoi` to backup only the dotiles. Please, follow the [installation guide](https://www.chezmoi.io/install/#one-line-package-install) specific to your operating system before proceeding.
-
-```shell
-chezmoi archive --output=/tmp/dotfiles-backup.tar.gz
-```
-
 ### Apply new configuration
 
 The following instruction clones the [dotfiles](https://github.com/stefaniuk/dotfiles) repository into the `~/.local/share/chezmoi/` directory and next applies changes accordingly, to your home directory `~/`. During the setup it prompts you to provide configuration options like Git committer name and email address, etc.
 
 ```shell
-bash -c "$(curl -fsLS get.chezmoi.io)" -- init --apply "stefaniuk"
+bash -c "$(curl -fsLS get.chezmoi.io)" -- init --branch "main" --apply "stefaniuk"
 ```
 
 You can find more information on how `chezmoi` works [here](./docs/guides/chezmoi-usage.md).
@@ -104,9 +90,8 @@ You may want to create your own fork of this dotfiles repository. Doing so will 
 
 ```shell
 # Prepare all the branches before rebasing
-git remote add upstream https://github.com/nhs-england-tools/dotfiles.git
-git remote -v
-git fetch upstream
+git checkout upstream/main
+git pull
 git checkout main
 
 # Rebase your changes on top of `upstream/main`
@@ -120,6 +105,20 @@ git reset --soft $(git merge-base main upstream/main)
 git add .
 git commit -S -m "Custom changes"
 git push --force-with-lease
+```
+
+### Archive your home directory
+
+Prior to applying any changes to your home directory, create a backup of your current configuration. This command creates an archive file in the temporary directory that can be used later to restore the configuration, if needed.
+
+```shell
+tar -czvf /tmp/home-directory-backup.tar.gz -C ~ .
+```
+
+You might be prompted by your terminal application to grant access permissions, allowing the process to access files in your home directory. However, if the above takes too long as it archives all the files in your home directory an alternative would be to use `chezmoi` to backup only the dotiles. Please, follow the [installation guide](https://www.chezmoi.io/install/#one-line-package-install) specific to your operating system before proceeding.
+
+```shell
+chezmoi archive --output=/tmp/dotfiles-backup.tar.gz
 ```
 
 ## Resources

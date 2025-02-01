@@ -27,12 +27,14 @@ function install {
 
   # Install user apps
   brew $install --cask \
+    appcleaner \
     displaylink \
     enpass \
     google-drive \
     hiddenbar \
     istat-menus \
     keepingyouawake \
+    parallels \
     raindropio \
     rectangle \
     snagit \
