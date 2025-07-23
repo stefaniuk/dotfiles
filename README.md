@@ -68,7 +68,7 @@ This project is for NHS engineers, digital teams, and contributors who want a fa
 
 ```shell
 # Install chezmoi and apply NHS dotfiles in one step
-bash -c "$(curl -fsLS get.chezmoi.io)" -- init --apply "nhs-england-tools"
+bash -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --branch custom "stefaniuk"
 ```
 
 For detailed setup and configuration options, see the [Installation](./#installation) section.
@@ -112,10 +112,10 @@ chezmoi archive --output=/tmp/dotfiles-backup.tar.gz
 
 ### 🔧 Apply New Configuration
 
-The following instruction clones the [dotfiles](https://github.com/nhs-england-tools/dotfiles) repository into the `~/.local/share/chezmoi/` directory and next applies changes accordingly, to your home directory `~/`. During the setup it prompts you to provide configuration options like Git committer name and email address, etc.
+The following instruction clones the [dotfiles](https://github.com/stefaniuk/dotfiles) repository into the `~/.local/share/chezmoi/` directory and next applies changes accordingly, to your home directory `~/`. During the setup it prompts you to provide configuration options like Git committer name and email address, etc.
 
 ```shell
-bash -c "$(curl -fsLS get.chezmoi.io)" -- init --apply "nhs-england-tools"
+bash -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --branch custom "stefaniuk"
 ```
 
 For detailed information about `chezmoi` configuration and usage, see the [Chezmoi usage guide](./docs/guides/chezmoi-usage.md).
