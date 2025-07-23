@@ -27,6 +27,7 @@ function install {
 
   brew $install \
     notion \
+    spotify \
     ||:
 }
 
