@@ -26,6 +26,7 @@ function main {
 function install {
 
   brew $install \
+    enpass \
     notion \
     spotify \
     ||:
