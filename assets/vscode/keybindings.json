@@ -1,113 +1,316 @@
 [
+  // ===========================================================================
+  // 1. Editor Font Zoom
+  // ===========================================================================
+
+  // Zoom in editor font size
   {
-    "key": "ctrl+=",
+    "key": "cmd+=",
     "command": "editor.action.fontZoomIn"
   },
+  // Zoom out editor font size
   {
-    "key": "ctrl+-",
+    "key": "cmd+-",
     "command": "editor.action.fontZoomOut"
   },
+  // Reset editor font zoom
   {
-    "key": "ctrl+0",
+    "key": "cmd+0",
     "command": "editor.action.fontZoomReset"
   },
+  // Reset window zoom (macOS)
+  {
+    "key": "cmd+0",
+    "command": "workbench.action.zoomReset"
+  },
+  // Remove alternate zoom reset binding (macOS Numpad 0)
+  {
+    "key": "cmd+numpad0",
+    "command": "-workbench.action.zoomReset"
+  },
+
+  // ===========================================================================
+  // 2. Editor Line & Block Manipulation
+  // ===========================================================================
+
+  // Delete current line
   {
     "key": "shift+enter",
     "command": "editor.action.deleteLines",
     "when": "textInputFocus && !editorReadonly"
   },
+  // Insert line after
+  {
+    "key": "cmd+enter",
+    "command": "editor.action.insertLineAfter"
+  },
+  // Insert line before
+  {
+    "key": "cmd+shift+enter",
+    "command": "editor.action.insertLineBefore"
+  },
+  // Move line up
+  {
+    "key": "option+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus"
+  },
+  // Move line down
+  {
+    "key": "option+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus"
+  },
+
+  // ===========================================================================
+  // 3. Selection & Navigation
+  // ===========================================================================
+
+  // Expand smart selection (semantic select)
   {
     "key": "insert",
     "command": "editor.action.smartSelect.expand",
     "when": "editorTextFocus"
   },
   {
+    "key": "option+insert",
+    "command": "editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  // Shrink smart selection
+  {
     "key": "shift+insert",
     "command": "editor.action.smartSelect.shrink",
     "when": "editorTextFocus"
   },
   {
-    "key": "alt+insert",
-    "command": "editor.action.smartSelect.expand",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+shift+insert",
+    "key": "option+shift+insert",
     "command": "editor.action.smartSelect.shrink",
     "when": "editorTextFocus"
   },
+  // Multi-cursor: add next occurrence
   {
-    "key": "ctrl+tab",
+    "key": "cmd+d",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  // Multi-cursor: select all occurrences
+  {
+    "key": "cmd+shift+l",
+    "command": "editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+
+  // ===========================================================================
+  // 4. Tab & Editor Group Management
+  // ===========================================================================
+
+  // Next editor tab
+  {
+    "key": "cmd+tab",
     "command": "workbench.action.nextEditor"
   },
+  // Previous editor tab
   {
-    "key": "ctrl+shift+tab",
+    "key": "cmd+shift+tab",
     "command": "workbench.action.previousEditor"
   },
+  // Split editor right
   {
-    "key": "ctrl+shift+right",
+    "key": "cmd+shift+right",
     "command": "workbench.action.splitEditorRight"
   },
+  // Split editor down
   {
-    "key": "ctrl+shift+down",
+    "key": "cmd+shift+down",
     "command": "workbench.action.splitEditorDown"
   },
+  // Focus editor group left
   {
-    "key": "ctrl+enter",
-    "command": "editor.action.insertLineAfter"
-  },
-  {
-    "key": "ctrl+shift+enter",
-    "command": "editor.action.insertLineBefore"
-  },
-  {
-    "key": "ctrl+insert",
-    "command": "openReference"
-  },
-  {
-    "key": "ctrl+left",
+    "key": "cmd+left",
     "command": "workbench.action.focusLeftGroup"
   },
+  // Focus editor group right
   {
-    "key": "ctrl+right",
+    "key": "cmd+right",
     "command": "workbench.action.focusRightGroup"
   },
+  // Focus editor group above
   {
-    "key": "ctrl+down",
-    "command": "workbench.action.focusBelowGroup"
-  },
-  {
-    "key": "ctrl+up",
+    "key": "cmd+up",
     "command": "workbench.action.focusAboveGroup"
   },
+  // Focus editor group below
   {
-    "key": "ctrl+alt+left",
-    "command": "workbench.action.navigateBack"
+    "key": "cmd+down",
+    "command": "workbench.action.focusBelowGroup"
   },
+  // Close active editor/tab
   {
-    "key": "ctrl+alt+right",
-    "command": "workbench.action.navigateForward"
+    "key": "cmd+w",
+    "command": "workbench.action.closeActiveEditor"
   },
+  // Close all editors/tabs
   {
-    "key": "ctrl+]",
+    "key": "cmd+k cmd+w",
+    "command": "workbench.action.closeAllEditors"
+  },
+
+  // ===========================================================================
+  // 5. Project & Symbol Navigation
+  // ===========================================================================
+
+  // Quick open file by name (fuzzy search)
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.quickOpen"
+  },
+  // Show all editors by most recently used
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+  // Go to symbol in file (outline)
+  {
+    "key": "cmd+shift+o",
+    "command": "workbench.action.gotoSymbol"
+  },
+  // Go to definition of symbol
+  {
+    "key": "f12",
+    "command": "editor.action.goToDeclaration"
+  },
+  // Peek definition inline
+  {
+    "key": "option+f12",
+    "command": "editor.action.peekDefinition"
+  },
+  // Go to implementation
+  {
+    "key": "cmd+f12",
+    "command": "editor.action.goToImplementation"
+  },
+  // Rename symbol/project-wide refactor
+  {
+    "key": "f2",
+    "command": "editor.action.rename"
+  },
+  // Open references for symbol
+  {
+    "key": "cmd+insert",
+    "command": "openReference"
+  },
+  // Jump to matching bracket
+  {
+    "key": "cmd+]",
     "command": "editor.action.jumpToBracket",
     "when": "editorTextFocus"
   },
+  // Select text to matching bracket
   {
-    "key": "ctrl+shift+]",
+    "key": "cmd+shift+]",
     "command": "editor.action.selectToBracket",
     "when": "editorTextFocus"
   },
+  // Navigate back in editor history
   {
-    "key": "ctrl+p",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+    "key": "cmd+option+left",
+    "command": "workbench.action.navigateBack"
   },
+  // Navigate forward in editor history
   {
-    "key": "cmd+0",
-    "command": "workbench.action.zoomReset"
+    "key": "cmd+option+right",
+    "command": "workbench.action.navigateForward"
   },
+
+  // ===========================================================================
+  // 6. Search & Replace
+  // ===========================================================================
+
+  // Project-wide search
   {
-    "key": "cmd+numpad0",
-    "command": "-workbench.action.zoomReset"
+    "key": "cmd+shift+f",
+    "command": "workbench.action.findInFiles"
+  },
+  // Find and replace in current file
+  {
+    "key": "cmd+f",
+    "command": "editor.action.startFindReplaceAction"
+  },
+
+  // ===========================================================================
+  // 7. Commenting & Code Actions
+  // ===========================================================================
+
+  // Toggle line comment
+  {
+    "key": "cmd+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // Toggle block comment
+  {
+    "key": "cmd+shift+a",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // Quick fix / code action
+  {
+    "key": "cmd+.",
+    "command": "editor.action.quickFix"
+  },
+  // Format current document
+  {
+    "key": "shift+option+f",
+    "command": "editor.action.formatDocument"
+  },
+
+  // ===========================================================================
+  // 8. Terminal & Panel Management
+  // ===========================================================================
+
+  // Toggle integrated terminal visibility
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // Open a new terminal
+  {
+    "key": "cmd+shift+`",
+    "command": "workbench.action.terminal.new"
+  },
+  // Toggle sidebar visibility
+  {
+    "key": "cmd+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  // Toggle panel (problems/output/terminal)
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.togglePanel"
+  },
+  // ===========================================================================
+  // 9. Miscellaneous
+  // ===========================================================================
+
+  // Show command palette
+  {
+    "key": "cmd+shift+p",
+    "command": "workbench.action.showCommands"
+  },
+  // Open settings
+  {
+    "key": "cmd+,",
+    "command": "workbench.action.openSettings"
+  },
+  // Open keyboard shortcuts
+  {
+    "key": "cmd+k cmd+s",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  // Open extensions view
+  {
+    "key": "cmd+shift+x",
+    "command": "workbench.view.extensions"
   }
 ]

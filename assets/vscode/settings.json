@@ -4,13 +4,9 @@
   //
   "aws.telemetry": false,
   "cSpell.language": "en,en-GB",
-  "cSpell.enableFiletypes": [
-    "dockerfile",
-    "makefile",
-    "shellscript",
-    "terraform",
-    "terraform-vars"
-  ],
+  "cSpell.enabledFileTypes": {
+    "*": true
+  },
   "redhat.telemetry.enabled": false,
   "todohighlight.keywords": ["SEE:"],
   //
@@ -19,21 +15,32 @@
   "breadcrumbs.enabled": true,
   "editor.autoIndent": "full",
   "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always"
+  },
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.fontSize": 20,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
+  "editor.minimap.enabled": true,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [80, 120],
+  "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": true,
   "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.wordWrap": "on",
   "explorer.autoReveal": true,
   "explorer.sortOrder": "default",
-  "extensions.ignoreRecommendations": true,
+  "extensions.ignoreRecommendations": false,
   "files.associations": {
     ".tool-versions": "plaintext"
   },
   "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 1000,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
+  "files.simpleDialog.enable": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "files.watcherExclude": {
@@ -45,7 +52,9 @@
   },
   "git.autofetch": true,
   "git.confirmSync": false,
+  "git.decorations.enabled": true,
   "git.enableCommitSigning": true,
+  "gitlens.currentLine.enabled": true,
   "search.exclude": {
     "**/.git": true,
     "**/log": true,
@@ -59,7 +68,12 @@
   "window.zoomLevel": 0,
   "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.editor.enablePreview": true,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.value": 8,
   "workbench.iconTheme": "vscode-icons",
+  "workbench.sideBar.location": "left",
+  "workbench.statusBar.visible": true,
   "workbench.tree.indent": 20,
   //
   // Files settings
@@ -98,5 +112,10 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "yaml.schemas": {
+    "/Users/dan/.vscode/extensions/continue.continue-1.1.67-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  }
 }
