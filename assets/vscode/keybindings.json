@@ -51,13 +51,13 @@
   },
   // Move line up
   {
-    "key": "option+up",
+    "key": "alt+up",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus"
   },
   // Move line down
   {
-    "key": "option+down",
+    "key": "alt+down",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus"
   },
@@ -73,7 +73,7 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "option+insert",
+    "key": "alt+insert",
     "command": "editor.action.smartSelect.expand",
     "when": "editorTextFocus"
   },
@@ -84,7 +84,7 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "option+shift+insert",
+    "key": "alt+shift+insert",
     "command": "editor.action.smartSelect.shrink",
     "when": "editorTextFocus"
   },
@@ -117,22 +117,22 @@
   },
   // Split editor right
   {
-    "key": "cmd+shift+right",
+    "key": "cmd+k cmd+right",
     "command": "workbench.action.splitEditorRight"
   },
   // Split editor down
   {
-    "key": "cmd+shift+down",
+    "key": "cmd+k cmd+down",
     "command": "workbench.action.splitEditorDown"
   },
   // Focus editor group left
   {
-    "key": "cmd+left",
+    "key": "ctrl+cmd+left",
     "command": "workbench.action.focusLeftGroup"
   },
   // Focus editor group right
   {
-    "key": "cmd+right",
+    "key": "ctrl+cmd+right",
     "command": "workbench.action.focusRightGroup"
   },
   // Focus editor group above
@@ -182,7 +182,7 @@
   },
   // Peek definition inline
   {
-    "key": "option+f12",
+    "key": "alt+f12",
     "command": "editor.action.peekDefinition"
   },
   // Go to implementation
@@ -214,12 +214,12 @@
   },
   // Navigate back in editor history
   {
-    "key": "cmd+option+left",
+    "key": "cmd+alt+left",
     "command": "workbench.action.navigateBack"
   },
   // Navigate forward in editor history
   {
-    "key": "cmd+option+right",
+    "key": "cmd+alt+right",
     "command": "workbench.action.navigateForward"
   },
 
@@ -261,7 +261,7 @@
   },
   // Format current document
   {
-    "key": "shift+option+f",
+    "key": "shift+alt+f",
     "command": "editor.action.formatDocument"
   },
 
